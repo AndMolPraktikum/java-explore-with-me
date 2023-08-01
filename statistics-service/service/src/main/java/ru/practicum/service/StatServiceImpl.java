@@ -8,13 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.RegistryMapper;
 import ru.practicum.RegistryRequest;
 import ru.practicum.RegistryResponse;
+import ru.practicum.exception.StatisticWrongTimeException;
 import ru.practicum.model.Registry;
 import ru.practicum.repository.StatServiceRepository;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -22,35 +21,43 @@ import java.util.List;
 @Slf4j
 public class StatServiceImpl implements StatService {
 
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
     @Autowired
     private final StatServiceRepository statServiceRepository;
 
     @Override
     @Transactional(readOnly = true)
-    public List<RegistryResponse> getStats(String startString, String endString,
-                                           String urisString, Boolean unique) {
-        LocalDateTime start = LocalDateTime.parse(startString, formatter);
-        LocalDateTime end = LocalDateTime.parse(endString, formatter);
-
-        List<String> uris = new ArrayList<>();
-        if (!urisString.isBlank()) {
-            uris = Arrays.asList(urisString.split(","));
-        }
+    public List<RegistryResponse> getStats(LocalDateTime start, LocalDateTime end,
+                                           List<String> uris, Boolean unique) {
+        checkTime(start, end);
 
         List<RegistryResponse> registryResponseList = new ArrayList<>();
-        if (urisString.isBlank() && unique.equals(false)) {
-            registryResponseList = statServiceRepository.findRecordsByTimeRange(start, end);
-        }
-        if (urisString.isBlank() && unique.equals(true)) {
-            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUniqueIp(start, end);
-        }
-        if (!urisString.isBlank() && unique.equals(false)) {
-            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUris(start, end, uris);
-        }
-        if (!urisString.isBlank() && unique.equals(true)) {
-            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUrisAndUniqueIp(start, end, uris);
+
+
+//        if (uris.isEmpty() && unique.equals(false)) {
+//            registryResponseList = statServiceRepository.findRecordsByTimeRange(start, end);
+//        }
+//        if (uris.isEmpty() && unique.equals(true)) {
+//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUniqueIp(start, end);
+//        }
+//        if (!uris.isEmpty() && unique.equals(false)) {
+//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUris(start, end, uris);
+//        }
+//        if (!uris.isEmpty() && unique.equals(true)) {
+//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUrisAndUniqueIp(start, end, uris);
+//        }
+
+        if (unique) {
+            if (uris.isEmpty()) {
+                registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUniqueIp(start, end);
+            } else {
+                registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUrisAndUniqueIp(start, end, uris);
+            }
+        } else {
+            if (uris.isEmpty()) {
+                registryResponseList = statServiceRepository.findRecordsByTimeRange(start, end);
+            } else {
+                registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUris(start, end, uris);
+            }
         }
 
         return registryResponseList;
@@ -60,6 +67,20 @@ public class StatServiceImpl implements StatService {
     @Transactional
     public void createRegistry(RegistryRequest registryRequest) {
         Registry registry = RegistryMapper.toRegistryEntity(registryRequest);
-        statServiceRepository.save(registry);
+        registry = statServiceRepository.save(registry);
+        //ToDo убрать лог и возврат
+        log.info("StatServiceImpl. запрос сохранен в базу: {}", registry);
+    }
+
+    private void checkTime(LocalDateTime start, LocalDateTime end) {
+        if (start.isAfter(end)) {
+            log.error("Время окончания периода не может быть раньше времени начала периода");
+            throw new StatisticWrongTimeException("Время окончания периода " +
+                    "не может быть раньше времени начала периода");
+        }
+        if (start.equals(end)) {
+            log.error("Время начала и окончания периода не может быть равно");
+            throw new StatisticWrongTimeException("Время начала и окончания периода не может быть равно");
+        }
     }
 }

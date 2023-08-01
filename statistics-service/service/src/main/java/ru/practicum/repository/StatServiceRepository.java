@@ -14,7 +14,7 @@ public interface StatServiceRepository extends JpaRepository<Registry, Long> {
 
     @Query("SELECT new ru.practicum.RegistryResponse(r.app, r.uri, COUNT(r.ip)) " +
             "FROM Registry r " +
-            "WHERE r.timestamp > ?1 AND r.timestamp < ?2 " +
+            "WHERE r.timestamp BETWEEN ?1 AND ?2 " +
             "GROUP BY r.app, r.uri")
     List<RegistryResponse> findRecordsByTimeRange(LocalDateTime start, LocalDateTime end);
 
@@ -24,7 +24,7 @@ public interface StatServiceRepository extends JpaRepository<Registry, Long> {
             "GROUP BY r.app, r.uri")
     List<RegistryResponse> findRecordsByTimeRangeAndUniqueIp(LocalDateTime start, LocalDateTime end);
 
-    @Query("SELECT new ru.practicum.RegistryResponse(r.app, r.uri, COUNT(r.ip)) " +
+    @Query("SELECT new ru.practicum.RegistryResponse(r.app, r.uri, COUNT(r.ip) AS hits) " +
             "FROM Registry r " +
             "WHERE r.timestamp BETWEEN ?1 AND ?2 " +
             "AND r.uri IN ?3 " +
@@ -32,7 +32,7 @@ public interface StatServiceRepository extends JpaRepository<Registry, Long> {
             "ORDER BY COUNT(r.ip) DESC")
     List<RegistryResponse> findRecordsByTimeRangeAndUris(LocalDateTime start, LocalDateTime end, List<String> uris);
 
-    @Query("SELECT new ru.practicum.RegistryResponse(r.app, r.uri, COUNT(DISTINCT r.ip)) " +
+    @Query("SELECT new ru.practicum.RegistryResponse(r.app, r.uri, COUNT(DISTINCT r.ip) AS hits) " +
             "FROM Registry r " +
             "WHERE r.timestamp BETWEEN ?1 AND ?2 " +
             "AND r.uri IN ?3 " +

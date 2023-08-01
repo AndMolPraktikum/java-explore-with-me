@@ -32,6 +32,7 @@ services:
 
   ewm-service:
     build: ./main-service
+    image: main-server-image
     container_name: main-server-cont
     ports:
       - "8080:8080"
@@ -40,7 +41,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123123
-      - POSTGRES_DB=exploreWithMe
+      - POSTGRES_DB=exploreWithMeMain
       - DB_HOST=ewm-db
       - DB_PORT=5432
       - "/etc/localtime:/etc/localtime:ro"
@@ -56,6 +57,6 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123123
-      - POSTGRES_DB=exploreWithMe
+      - POSTGRES_DB=exploreWithMeMain
       - "/etc/localtime:/etc/localtime:ro"
       - "/etc/timezone:/etc/timezone:ro"

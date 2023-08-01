@@ -36,4 +36,15 @@ public class Registry {
         this.ip = ip;
         this.timestamp = timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "Registry{" +
+                "id=" + id +
+                ", app='" + app + '\'' +
+                ", uri='" + uri + '\'' +
+                ", ip='" + ip + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
+    }
 }
