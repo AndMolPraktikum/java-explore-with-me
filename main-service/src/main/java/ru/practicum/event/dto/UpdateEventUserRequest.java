@@ -1,12 +1,14 @@
 package ru.practicum.event.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import ru.practicum.enums.StateActionUser;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class UpdateEventUserRequest extends AbstractUpdateEventRequest {
 

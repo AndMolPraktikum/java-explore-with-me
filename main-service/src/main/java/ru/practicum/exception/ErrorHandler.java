@@ -15,14 +15,6 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class ErrorHandler {
 
-
-    //    @ExceptionHandler
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    public Response handleItemIsUnavailableException(final ItemIsUnavailableException e) {
-//        log.info("400 {}", e.getMessage(), e);
-//        return new Response(String.format("%s %s", LocalDateTime.now(), e.getMessage()));
-//    }
-//
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiError handleEventTimeConditionBadRequestException(final EventTimeConditionBadRequestException e) {
@@ -62,13 +54,6 @@ public class ErrorHandler {
                 e.getMessage(),
                 LocalDateTime.now());
     }
-//
-//    @ExceptionHandler
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    public Response handleUserHaveNoSuchItemException(final UserHaveNoSuchItemException e) {
-//        log.info("404 {}", e.getMessage(), e);
-//        return new Response(String.format("%s %s", LocalDateTime.now(), e.getMessage()));
-//    }
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -162,8 +147,11 @@ public class ErrorHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public Response handleThrowable(final Throwable e) {
+    public ApiError handleThrowable(final Throwable e) {
         log.info("500 {}", e.getMessage(), e);
-        return new Response(String.format("%s %s", LocalDateTime.now(), e.getMessage()));
+        return new ApiError("INTERNAL_SERVER_ERROR",
+                "Server ERROR",
+                e.getMessage(),
+                LocalDateTime.now());
     }
 }

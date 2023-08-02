@@ -19,12 +19,9 @@ public class AdminUserController {
 
     private final UserService userService;
 
-    //ToDo Получение информации о пользователях
-    //Возвращает информацию обо всех пользователях (учитываются параметры ограничения выборки), либо о конкретных (учитываются указанные идентификаторы)
-    //В случае, если по заданным фильтрам не найдено ни одного пользователя, возвращает пустой список
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<UserDto> getAdminAllUsers(@RequestParam(required = false) List<Long> ids, //список id пользователей
+    public List<UserDto> getAdminAllUsers(@RequestParam(required = false) List<Long> ids,
                                           @RequestParam(defaultValue = "0") int from,
                                           @RequestParam(defaultValue = "10") int size) {
         log.info("Входящий запрос GET /admin/users?ids={}&from={}&size={}.", ids, from, size);
@@ -33,7 +30,6 @@ public class AdminUserController {
         return userDtoList;
     }
 
-    //ToDo Добавление нового пользователя
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserDto crateUser(@RequestBody @Valid NewUserRequest newUserRequest) {
@@ -43,7 +39,6 @@ public class AdminUserController {
         return userDto;
     }
 
-    //ToDo Удаление пользователя
     @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUserById(@PathVariable Long userId) {

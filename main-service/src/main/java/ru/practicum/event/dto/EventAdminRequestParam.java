@@ -21,7 +21,7 @@ public class EventAdminRequestParam {
 
     private LocalDateTime rangeStart;
 
-    LocalDateTime rangeEnd;
+    private LocalDateTime rangeEnd;
 
     private int from;
 

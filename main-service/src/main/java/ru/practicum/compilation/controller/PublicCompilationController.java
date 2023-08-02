@@ -18,8 +18,6 @@ public class PublicCompilationController {
     @Autowired
     private final CompilationService compilationService;
 
-    //ToDo Получение подборок событий
-    //В случае, если по заданным фильтрам не найдено ни одной подборки, возвращает пустой список
     @GetMapping
     public List<CompilationDto> getAllCompilations(@RequestParam(defaultValue = "false") boolean pinned,
                                                    @RequestParam(defaultValue = "0") int from,
@@ -30,8 +28,6 @@ public class PublicCompilationController {
         return compilationDtoList;
     }
 
-    //ToDo Получение подборки событий по его id
-    //В случае, если подборки с заданным id не найдено, возвращает статус код 404
     @GetMapping("/{compId}")
     public CompilationDto getCompilationById(@PathVariable Long compId) {
         log.info("Входящий запрос GET /compilations/{}", compId);

@@ -50,9 +50,7 @@ public class RequestServiceImpl implements RequestService {
         User user = userService.getUserById(userId);
         Event event = eventService.getEventById(eventId);
         int confirmedRequest = getConfirmedRequestByEventId(eventId);
-//        if (requestRepository.requestIsAlreadyExist(userId, eventId)) {
-//            log.error("");
-//        }
+
         if (event.getInitiator().getId().equals(userId)) {
             log.error("The initiator of the event cannot request participation in it");
             throw new RequestCreationConditionsException("The initiator of the event cannot request participation in it");

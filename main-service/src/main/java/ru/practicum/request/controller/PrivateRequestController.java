@@ -19,8 +19,6 @@ public class PrivateRequestController {
     @Autowired
     private final RequestService requestService;
 
-    //ToDo Получение информации о заявках текущего пользователя на участие в чужих событиях
-    //В случае, если по заданным фильтрам не найдено ни одной заявки, возвращает пустой список
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ParticipationRequestDto> getUserRequests(@PathVariable Long userId) {
@@ -30,13 +28,6 @@ public class PrivateRequestController {
         return responseList;
     }
 
-    //ToDo Добавление запроса от текущего пользователя на участие в событии
-    //Обратите внимание:
-    //нельзя добавить повторный запрос (Ожидается код ошибки 409)
-    //инициатор события не может добавить запрос на участие в своём событии (Ожидается код ошибки 409)
-    //нельзя участвовать в неопубликованном событии (Ожидается код ошибки 409)
-    //если у события достигнут лимит запросов на участие - необходимо вернуть ошибку (Ожидается код ошибки 409)
-    //если для события отключена пре-модерация запросов на участие, то запрос должен автоматически перейти в состояние подтвержденного
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ParticipationRequestDto createUserRequest(@PathVariable Long userId,
@@ -47,7 +38,6 @@ public class PrivateRequestController {
         return participationRequestDto;
     }
 
-    //ToDo Отмена своего запроса на участие в событии
     @PatchMapping("/{requestId}/cancel")
     @ResponseStatus(HttpStatus.OK)
     public ParticipationRequestDto cancelUpdateUserRequest(@PathVariable Long userId,
@@ -57,6 +47,4 @@ public class PrivateRequestController {
         log.info("Исходящий ответ: {}", participationRequestDto);
         return participationRequestDto;
     }
-
-
 }

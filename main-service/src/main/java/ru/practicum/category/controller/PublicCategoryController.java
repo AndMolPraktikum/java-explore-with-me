@@ -17,8 +17,6 @@ public class PublicCategoryController {
 
     private final CategoryService categoryService;
 
-    //ToDo Получение категорий
-    //В случае, если по заданным фильтрам не найдено ни одной категории, возвращает пустой список
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<CategoryDto> getAllCategories(@RequestParam(defaultValue = "0") int from,
@@ -29,8 +27,6 @@ public class PublicCategoryController {
         return categoryDtoList;
     }
 
-    //ToDo Получение категории по идентификатору
-    //В случае, если категории с заданным id не найдено, возвращает статус код 404
     @GetMapping("/{catId}")
     @ResponseStatus(HttpStatus.OK)
     public CategoryDto getCategoryById(@PathVariable long catId) {

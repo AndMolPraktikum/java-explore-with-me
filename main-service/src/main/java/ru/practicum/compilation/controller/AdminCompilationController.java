@@ -21,7 +21,6 @@ public class AdminCompilationController {
     @Autowired
     private final CompilationService compilationService;
 
-    //ToDo Добавление новой подборки (подборка может не содержать событий)
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CompilationDto createCompilation(@RequestBody @Valid NewCompilationDto newCompilationDto) {
@@ -31,7 +30,6 @@ public class AdminCompilationController {
         return createdCompilation;
     }
 
-    //ToDo Удаление подборки
     @DeleteMapping("/{compId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCompilation(@PathVariable Long compId) {
@@ -39,7 +37,6 @@ public class AdminCompilationController {
         compilationService.deleteCompilationById(compId);
     }
 
-    //ToDo Обновить информацию о подборке
     @PatchMapping("/{compId}")
     @ResponseStatus(HttpStatus.OK)
     private CompilationDto updateCompilation(@PathVariable Long compId,

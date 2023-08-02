@@ -17,7 +17,7 @@ public class EventShortDto {
 
     private CategoryDto category;               // + Категория
 
-    private long confirmedRequests;              ////// + Количество одобренных заявок на участие в данном событии
+    private long confirmedRequests;             ////// + Количество одобренных заявок на участие в данном событии
 
     private LocalDateTime eventDate;            // + Дата и время на которые намечено событие
 
@@ -29,7 +29,7 @@ public class EventShortDto {
 
     private String title;                       // + Заголовок
 
-    private long views;                      ////// + Количество просмотрев события
+    private long views;                         ////// + Количество просмотрев события
 
     public EventShortDto(String annotation, CategoryDto category, LocalDateTime eventDate, long id,
                          UserShortDto initiator, boolean paid, String title) {

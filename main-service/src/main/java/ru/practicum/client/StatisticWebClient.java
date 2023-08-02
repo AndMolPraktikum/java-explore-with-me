@@ -8,12 +8,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
 import ru.practicum.client.dto.RegistryRequest;
 import ru.practicum.client.dto.RegistryResponse;
-
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -46,8 +44,6 @@ public class StatisticWebClient {
     }
 
     public List<RegistryResponse> getStats(LocalDateTime start, LocalDateTime end, List<String> urisList, boolean unique) {
-        //checkTime(start, end);
-
         String uri;
 
         if (urisList.isEmpty()) {
@@ -74,17 +70,4 @@ public class StatisticWebClient {
                 .toEntityList(RegistryResponse.class)
                 .block()).getBody();
     }
-
-//    private void checkTime(LocalDateTime start, LocalDateTime end) {
-//
-//        if (start.isAfter(end)) {
-//            log.error("Время окончания периода не может быть раньше времени начала периода");
-//            throw new StatisticWrongTimeException("Время окончания периода " +
-//                    "не может быть раньше времени начала периода");
-//        }
-//        if (start.equals(end)) {
-//            log.error("Время начала и окончания периода не может быть равно");
-//            throw new StatisticWrongTimeException("Время начала и окончания периода не может быть равно");
-//        }
-//    }
 }

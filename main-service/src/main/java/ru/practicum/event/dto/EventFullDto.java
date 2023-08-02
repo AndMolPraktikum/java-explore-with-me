@@ -20,7 +20,7 @@ public class EventFullDto {
 
     private CategoryDto category;               // + Категория
 
-    private long confirmedRequests;              ////// + Количество одобренных заявок на участие в данном событии
+    private long confirmedRequests;             ////// + Количество одобренных заявок на участие в данном событии
 
     private LocalDateTime createdOn;            // + Дата и время создания события
 
@@ -32,7 +32,7 @@ public class EventFullDto {
 
     private UserShortDto initiator;             // + Создатель события
 
-    private LocationDto location;                  // + Широта и долгота места проведения события
+    private LocationDto location;               // + Широта и долгота места проведения события
 
     private boolean paid;                       // + Нужно ли оплачивать участие в событии
 
@@ -46,6 +46,6 @@ public class EventFullDto {
 
     private String title;                       // + Заголовок
 
-    private long views;                      ////// + Количество просмотрев события
+    private long views;                         ////// + Количество просмотрев события
 
 }

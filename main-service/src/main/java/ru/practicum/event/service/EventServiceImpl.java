@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.practicum.category.model.Category;
 import ru.practicum.category.service.CategoryService;
-import ru.practicum.enums.*;
 import ru.practicum.client.MainClient;
+import ru.practicum.enums.*;
 import ru.practicum.event.dto.*;
 import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.model.Event;
@@ -86,7 +86,8 @@ public class EventServiceImpl implements EventService {
                         rangeEnd, page);
         List<EventFullDto> eventFullDtoList = EventMapper.toEventFullDtoList(eventList);
 
-        eventFullDtoList.forEach(event -> event.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(event.getId()))); //получение одобренных заявок
+        eventFullDtoList.forEach(event -> event.setConfirmedRequests(eventRepository
+                .getCountByEventIdWhereStatusConfirmed(event.getId())));
 
         return client.getStatisticFull(eventFullDtoList);
     }
@@ -97,12 +98,13 @@ public class EventServiceImpl implements EventService {
         Pageable page = PageRequest.of(from, size, Sort.by("id"));
         List<Event> eventList = eventRepository.findAllByInitiatorId(userId, page);
         List<EventShortDto> result = EventMapper.toEventShortDtoList(eventList);
-        result.forEach(event -> event.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(event.getId()))); //получение одобренных заявок
-        //client.getStatisticShort(result);
-        return result;  //добавление статистики и возврат
+
+        result.forEach(event -> event.setConfirmedRequests(eventRepository
+                .getCountByEventIdWhereStatusConfirmed(event.getId())));
+
+        return result;
     }
 
-    // ToDo отсюда запрос сохраняется в статистику
     @Override
     public List<EventShortDto> getPublicEvents(EventPublicRequestParam params, String ip) {
         String text = params.getText();
@@ -122,14 +124,14 @@ public class EventServiceImpl implements EventService {
         }
         timeCheck(rangeStart, rangeEnd);
 
-        client.saveRegistry("/events", ip); //отправка статистики
+        client.saveRegistry("/events", ip);
 
         List<Event> eventList = eventRepository.findAllByCriteria(text, categoryIds, paid,
                 rangeStart, rangeEnd, onlyAvailable, page);
 
         List<EventShortDto> eventShortDtoList = EventMapper.toEventShortDtoList(eventList);
 
-        eventShortDtoList = client.getStatisticShort(eventShortDtoList); // получение статистики
+        eventShortDtoList = client.getStatisticShort(eventShortDtoList);
 
         if (sortVariant == SortVariant.EVENT_DATE) {
             eventShortDtoList = eventShortDtoList.stream().sorted(Comparator.comparing(EventShortDto::getEventDate))
@@ -152,12 +154,11 @@ public class EventServiceImpl implements EventService {
                     "event with id=%d", userId, eventId));
         }
         EventFullDto eventFullDto = EventMapper.toEventFullDto(event);
-        eventFullDto.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(eventId)); //получение одобренных заявок
-        eventFullDto.setViews(client.getStatisticById(eventId));  //получение статистики
+        eventFullDto.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(eventId));
+        eventFullDto.setViews(client.getStatisticById(eventId));
         return eventFullDto;
     }
 
-    // ToDo отсюда запрос сохраняется в статистику
     @Override
     public EventFullDto getPublicEventById(Long id, String ip) {
         Event event = getEventById(id);
@@ -165,10 +166,10 @@ public class EventServiceImpl implements EventService {
             log.error("Event with id={} was not found", id);
             throw new EventNotFoundException(String.format("Event with id=%d was not found", id));
         }
-        client.saveRegistry("/events/" + id, ip); //отправка статистики
+        client.saveRegistry("/events/" + id, ip);
         EventFullDto result = EventMapper.toEventFullDto(event);
-        result.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(id)); //получение одобренных заявок
-        result.setViews(client.getStatisticById(id));  //получение статистики
+        result.setConfirmedRequests(eventRepository.getCountByEventIdWhereStatusConfirmed(id));
+        result.setViews(client.getStatisticById(id));
         return result;
     }
 
@@ -187,8 +188,6 @@ public class EventServiceImpl implements EventService {
         Event event = EventMapper.toEventEntity(newEventDto);
         event.setInitiator(user);
         event.setCategory(category);
-        //ToDo тут confirmedRequests и views инициализируются нулями, еще никаких заявок не было
-        // событие не опубликовано, просмотров не было
         locationRepository.save(event.getLocation());
         return EventMapper.toEventFullDto(eventRepository.save(event));
     }
@@ -198,9 +197,6 @@ public class EventServiceImpl implements EventService {
     public EventFullDto updateAdminEventById(Long eventId, UpdateEventAdminRequest updateEvent) {
         Event event = updateEventConditionsCheckAdmin(eventId, updateEvent);
         updateEventFields(event, updateEvent);
-
-        //ToDo тут confirmedRequests и views инициализируются нулями, еще никаких заявок не было
-        // событие не публиковалось, просмотров не было
         return EventMapper.toEventFullDto(eventRepository.save(event));
     }
 
@@ -211,9 +207,6 @@ public class EventServiceImpl implements EventService {
         userService.getUserById(userId);
         Event event = updateEventConditionsCheckUser(eventId, updateEvent);
         updateEventFields(event, updateEvent);
-
-        //ToDo тут confirmedRequests и views инициализируются нулями, еще никаких заявок не было
-        // событие не публиковалось, просмотров не было
         return EventMapper.toEventFullDto(eventRepository.save(event));
     }
 

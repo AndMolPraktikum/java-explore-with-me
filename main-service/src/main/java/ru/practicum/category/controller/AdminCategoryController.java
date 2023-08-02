@@ -20,8 +20,6 @@ public class AdminCategoryController {
     @Autowired
     private final CategoryService categoryService;
 
-    //ToDo Добавление новой категории
-    //Обратите внимание: имя категории должно быть уникальным
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryDto createCategory(@RequestBody @Valid NewCategoryDto newCategoryDto) {
@@ -31,8 +29,6 @@ public class AdminCategoryController {
         return categoryDto;
     }
 
-    //ToDo Изменение категории
-    //Обратите внимание: имя категории должно быть уникальным
     @PatchMapping("/{catId}")
     @ResponseStatus(HttpStatus.OK)
     public CategoryDto updateCategory(@PathVariable Long catId, @RequestBody @Valid CategoryDto categoryDto) {
@@ -42,14 +38,10 @@ public class AdminCategoryController {
         return responseCategoryDto;
     }
 
-    //ToDo Удаление категории
-    //Обратите внимание: с категорией не должно быть связано ни одного события.
     @DeleteMapping("/{catId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategoryById(@PathVariable Long catId) {
         log.info("Входящий запрос DELETE /admin/categories/{}", catId);
         categoryService.deleteCategory(catId);
     }
-
-
 }

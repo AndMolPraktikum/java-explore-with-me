@@ -11,13 +11,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ApiError {
 
-    //private List<Error> errors;         // Список стектрейсов или описания ошибок
+    private String status;
 
-    private String status;              // Код статуса HTTP-ответа
+    private String reason;
 
-    private String reason;              // Общее описание причины ошибки
+    private String message;
 
-    private String message;             // Сообщение об ошибке
-
-    private LocalDateTime timestamp;    // Дата и время когда произошла ошибка (в формате "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime timestamp;
 }

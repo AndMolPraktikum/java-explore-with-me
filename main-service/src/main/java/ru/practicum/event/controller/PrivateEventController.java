@@ -22,8 +22,6 @@ public class PrivateEventController {
     @Autowired
     private final EventService eventService;
 
-    //ToDo Получение событий, добавленных этим пользователем
-    //В случае, если по заданным фильтрам не найдено ни одного события, возвращает пустой список
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     private List<EventShortDto> getAllUserEvents(@PathVariable Long userId,
@@ -36,8 +34,6 @@ public class PrivateEventController {
         return eventShortDtoList;
     }
 
-    //ToDo Добавление нового события
-    //Обратите внимание: дата и время на которые намечено событие не может быть раньше, чем через два часа от текущего момента
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     private EventFullDto createEvent(@PathVariable Long userId, @Valid @RequestBody NewEventDto newEventDto) {
@@ -47,8 +43,6 @@ public class PrivateEventController {
         return createdEventFullDto;
     }
 
-    //ToDo Получение полной информации о событии добавленном текущим пользователем
-    //В случае, если события с заданным id не найдено, возвращает статус код 404
     @GetMapping("/{eventId}")
     @ResponseStatus(HttpStatus.OK)
     private EventFullDto getUserEventById(@PathVariable Long userId, @PathVariable Long eventId) {
@@ -58,22 +52,18 @@ public class PrivateEventController {
         return eventFullDto;
     }
 
-    //ToDo Изменение события добавленного текущим пользователем
-    //изменить можно только отмененные события или события в состоянии ожидания модерации (Ожидается код ошибки 409)
-    //дата и время на которые намечено событие не может быть раньше, чем через два часа от текущего момента (Ожидается код ошибки 409)
     @PatchMapping("/{eventId}")
     @ResponseStatus(HttpStatus.OK)
     private EventFullDto updateUserEventById(@PathVariable Long userId,
                                              @PathVariable Long eventId,
                                              @RequestBody @Valid UpdateEventUserRequest updateEventUserRequest) {
         log.info("Входящий запрос PATCH /users/{}/events/{} : {}", userId, eventId, updateEventUserRequest);
-        EventFullDto updatedEventFullDto = eventService.updatePrivateUserEventById(userId, eventId, updateEventUserRequest);
+        EventFullDto updatedEventFullDto = eventService.updatePrivateUserEventById(userId, eventId,
+                updateEventUserRequest);
         log.info("Исходящий ответ: {}", updatedEventFullDto);
         return updatedEventFullDto;
     }
 
-    //ToDo Получение информации о запросах на участие в событии текущего пользователя
-    //В случае, если по заданным фильтрам не найдено ни одной заявки, возвращает пустой список
     @GetMapping("/{eventId}/requests")
     @ResponseStatus(HttpStatus.OK)
     private List<ParticipationRequestDto> getUserEventRequest(@PathVariable Long userId, @PathVariable Long eventId) {
@@ -83,19 +73,14 @@ public class PrivateEventController {
         return participationRequestDtoList;
     }
 
-    //ToDo Изменение статуса (подтверждена, отменена) заявок на участие в событии текущего пользователя
-    //если для события лимит заявок равен 0 или отключена пре-модерация заявок, то подтверждение заявок не требуется
-    //нельзя подтвердить заявку, если уже достигнут лимит по заявкам на данное событие (Ожидается код ошибки 409)
-    //статус можно изменить только у заявок, находящихся в состоянии ожидания (Ожидается код ошибки 409)
-    //если при подтверждении данной заявки, лимит заявок для события исчерпан, то все неподтверждённые заявки необходимо отклонить
     @PatchMapping("/{eventId}/requests")
     @ResponseStatus(HttpStatus.OK)
-    private EventRequestStatusUpdateResult getUserEventRequest(@PathVariable Long userId,
-                                                               @PathVariable Long eventId,
-                                                               @RequestBody @Valid EventRequestStatusUpdateRequest eventRequestStatusUpdateRequest) {
-        log.info("Входящий запрос PATCH /users/{}/events/{}/requests : {}", userId, eventId, eventRequestStatusUpdateRequest);
-        EventRequestStatusUpdateResult result = eventService.updateEventStatusFromOwner(userId, eventId,
-                eventRequestStatusUpdateRequest);
+    private EventRequestStatusUpdateResult getUserEventRequest(
+            @PathVariable Long userId,
+            @PathVariable Long eventId,
+            @RequestBody @Valid EventRequestStatusUpdateRequest request) {
+        log.info("Входящий запрос PATCH /users/{}/events/{}/requests : {}", userId, eventId, request);
+        EventRequestStatusUpdateResult result = eventService.updateEventStatusFromOwner(userId, eventId, request);
         log.info("Исходящий ответ: {}", result);
         return result;
     }

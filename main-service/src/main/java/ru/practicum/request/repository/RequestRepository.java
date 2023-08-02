@@ -16,8 +16,4 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
     List<Request> findAllByRequesterId(Long userId);
 
     List<Request> findAllByEventId(Long eventId);
-
-
-//    @Query("SELECT (COUNT(r) > 0) FROM Request r WHERE r.requester.id = ?1 AND r.event.id = ?2;")
-//    boolean requestIsAlreadyExist(Long userId, Long eventId);
 }

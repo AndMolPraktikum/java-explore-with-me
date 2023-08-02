@@ -11,8 +11,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ApiError {
 
-    //private List<Error> errors;         // Список стектрейсов или описания ошибок
-
     private String status;              // Код статуса HTTP-ответа
 
     private String reason;              // Общее описание причины ошибки

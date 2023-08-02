@@ -33,17 +33,13 @@ public class MainClient {
         List<RegistryResponse> responseList = statisticWebClient.getStats(START_TIME, LocalDateTime.now(),
                 List.of("/events/" + eventId), true);
         if (responseList.isEmpty()) {
-            //ToDo убрать лог
-            log.info("responseList пустой: {}", responseList);
             return 0L;
         }
-        //ToDo убрать лог
-        log.info("responseList: {}", responseList);
+
         return responseList.get(0).getHits();
     }
 
     public List<EventShortDto> getStatisticShort(List<EventShortDto> eventShortDtoList) {
-        //List<Long> urisIds =  eventShortDtoList.stream().map(EventShortDto::getId).collect(Collectors.toList());
         List<String> uris = eventShortDtoList.stream()
                 .map(EventShortDto::getId)
                 .map(id -> "/events/" + id)
@@ -63,7 +59,6 @@ public class MainClient {
     }
 
     public List<EventFullDto> getStatisticFull(List<EventFullDto> eventFullDtoList) {
-        //List<Long> urisIds =  eventShortDtoList.stream().map(EventShortDto::getId).collect(Collectors.toList());
         List<String> uris = eventFullDtoList.stream()
                 .map(EventFullDto::getId)
                 .map(id -> "/events/" + id)

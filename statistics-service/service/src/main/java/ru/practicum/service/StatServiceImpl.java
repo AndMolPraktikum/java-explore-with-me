@@ -13,7 +13,6 @@ import ru.practicum.model.Registry;
 import ru.practicum.repository.StatServiceRepository;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,21 +29,7 @@ public class StatServiceImpl implements StatService {
                                            List<String> uris, Boolean unique) {
         checkTime(start, end);
 
-        List<RegistryResponse> registryResponseList = new ArrayList<>();
-
-
-//        if (uris.isEmpty() && unique.equals(false)) {
-//            registryResponseList = statServiceRepository.findRecordsByTimeRange(start, end);
-//        }
-//        if (uris.isEmpty() && unique.equals(true)) {
-//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUniqueIp(start, end);
-//        }
-//        if (!uris.isEmpty() && unique.equals(false)) {
-//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUris(start, end, uris);
-//        }
-//        if (!uris.isEmpty() && unique.equals(true)) {
-//            registryResponseList = statServiceRepository.findRecordsByTimeRangeAndUrisAndUniqueIp(start, end, uris);
-//        }
+        List<RegistryResponse> registryResponseList;
 
         if (unique) {
             if (uris.isEmpty()) {
@@ -67,9 +52,7 @@ public class StatServiceImpl implements StatService {
     @Transactional
     public void createRegistry(RegistryRequest registryRequest) {
         Registry registry = RegistryMapper.toRegistryEntity(registryRequest);
-        registry = statServiceRepository.save(registry);
-        //ToDo убрать лог и возврат
-        log.info("StatServiceImpl. запрос сохранен в базу: {}", registry);
+        statServiceRepository.save(registry);
     }
 
     private void checkTime(LocalDateTime start, LocalDateTime end) {
