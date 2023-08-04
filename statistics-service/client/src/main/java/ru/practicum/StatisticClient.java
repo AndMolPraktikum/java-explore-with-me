@@ -14,6 +14,8 @@ import ru.practicum.exception.StatisticWrongTimeException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -40,39 +42,37 @@ public class StatisticClient {
                 .block();
     }
 
-    public ResponseEntity<Object> getStats(String start, String end, String urisString, boolean unique) {
+    public List<RegistryResponse> getStats(LocalDateTime start, LocalDateTime end, List<String> urisList, boolean unique) {
         checkTime(start, end);
 
         String uri;
 
-        if (urisString.isEmpty()) {
+        if (urisList.isEmpty()) {
             uri = UriComponentsBuilder.fromHttpUrl(serverUri + "/stats")
-                    .queryParam("start", start)
-                    .queryParam("end", end)
+                    .queryParam("start", start.format(formatter))
+                    .queryParam("end", end.format(formatter))
                     .queryParam("unique", unique)
                     .build()
                     .toUriString();
         } else {
             uri = UriComponentsBuilder.fromHttpUrl(serverUri + "/stats")
-                    .queryParam("start", start)
-                    .queryParam("end", end)
-                    .queryParam("uris", urisString)
+                    .queryParam("start", start.format(formatter))
+                    .queryParam("end", end.format(formatter))
+                    .queryParam("uris", urisList)
                     .queryParam("unique", unique)
                     .build()
                     .toUriString();
         }
 
-        return webClient.get()
+        return Objects.requireNonNull(webClient.get()
                 .uri(uri)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .toEntity(Object.class)
-                .block();
+                .toEntityList(RegistryResponse.class)
+                .block()).getBody();
     }
 
-    private void checkTime(String startString, String endString) {
-        LocalDateTime start = LocalDateTime.parse(startString, formatter);
-        LocalDateTime end = LocalDateTime.parse(endString, formatter);
+    private void checkTime(LocalDateTime start, LocalDateTime end) {
 
         if (start.isAfter(end)) {
             log.error("Время окончания периода не может быть раньше времени начала периода");
