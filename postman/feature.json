@@ -1,14 +1,14 @@
 {
   "info": {
-    "_postman_id": "09e847a2-1785-411f-bf4d-d27ca13aa6e7",
+    "_postman_id": "c1b2da68-1b58-407f-8906-b47d6d9a4e07",
     "name": "\"Explore with me\" API комментарии",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "26388332",
-    "_collection_link": "https://lively-crescent-670631.postman.co/workspace/e7592ab3-aa12-4fcd-8535-d63feece9a44/collection/26388332-09e847a2-1785-411f-bf4d-d27ca13aa6e7?action=share&creator=26388332&source=collection_link"
+    "_collection_link": "https://lively-crescent-670631.postman.co/workspace/e7592ab3-aa12-4fcd-8535-d63feece9a44/collection/26388332-c1b2da68-1b58-407f-8906-b47d6d9a4e07?action=share&creator=26388332&source=collection_link"
   },
   "item": [
     {
-      "name": "Добавление нового пользователя",
+      "name": "Добавление нового пользователя 134",
       "event": [
         {
           "listen": "prerequest",
@@ -30,20 +30,20 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' пользователя должно быть равно 1\", function () {\r",
+              "pm.test(\"Поле 'id' пользователя должно быть равно 134\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 134').to.eql(134);\r",
               "});\r",
               "pm.test(\"Поле 'email' пользователя должно быть равно user1@yandex.ru\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('email');\r",
-              "    pm.expect(jsonData.email, '\"email\" must be \"user1@yandex.ru\"').to.eql('user1@yandex.ru');\r",
+              "    pm.expect(jsonData.email, '\"email\" must be \"user134@yandex.ru\"').to.eql('user134@yandex.ru');\r",
               "});\r",
-              "pm.test(\"Поле 'name' пользователя должно быть user1\", function () {\r",
+              "pm.test(\"Поле 'name' пользователя должно быть user134\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('name');\r",
-              "    pm.expect(jsonData.name, '\"name\" must be \"user1\"').to.eql('user1');\r",
+              "    pm.expect(jsonData.name, '\"name\" must be \"user134\"').to.eql('user134');\r",
               "});"
             ],
             "type": "text/javascript"
@@ -55,7 +55,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"user1\",\r\n    \"email\": \"user1@yandex.ru\"\r\n}",
+          "raw": "{\r\n    \"name\": \"user134\",\r\n    \"email\": \"user134@yandex.ru\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -76,7 +76,7 @@
       "response": []
     },
     {
-      "name": "Добавление еще одного пользователя",
+      "name": "Добавление еще одного пользователя 135",
       "event": [
         {
           "listen": "prerequest",
@@ -98,20 +98,20 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' пользователя должно быть равно 2\", function () {\r",
+              "pm.test(\"Поле 'id' пользователя должно быть равно 135\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 135').to.eql(135);\r",
               "});\r",
-              "pm.test(\"Поле 'email' пользователя должно быть равно user2@yandex.ru\", function () {\r",
+              "pm.test(\"Поле 'email' пользователя должно быть равно user135@yandex.ru\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('email');\r",
-              "    pm.expect(jsonData.email, '\"email\" must be \"user2@yandex.ru\"').to.eql('user2@yandex.ru');\r",
+              "    pm.expect(jsonData.email, '\"email\" must be \"user135@yandex.ru\"').to.eql('user135@yandex.ru');\r",
               "});\r",
-              "pm.test(\"Поле 'name' пользователя должно быть user2\", function () {\r",
+              "pm.test(\"Поле 'name' пользователя должно быть user135\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('name');\r",
-              "    pm.expect(jsonData.name, '\"name\" must be \"user2\"').to.eql('user2');\r",
+              "    pm.expect(jsonData.name, '\"name\" must be \"user135\"').to.eql('user135');\r",
               "});"
             ],
             "type": "text/javascript"
@@ -123,7 +123,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"user2\",\r\n    \"email\": \"user2@yandex.ru\"\r\n}",
+          "raw": "{\r\n    \"name\": \"user135\",\r\n    \"email\": \"user135@yandex.ru\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -144,7 +144,7 @@
       "response": []
     },
     {
-      "name": "Добавление новой категории 1",
+      "name": "Добавление новой категории 119: Театр",
       "event": [
         {
           "listen": "test",
@@ -157,10 +157,10 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' категории должно быть равно 1\", function () {\r",
+              "pm.test(\"Поле 'id' категории должно быть равно 119\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 119').to.eql(119);\r",
               "});\r",
               "pm.test(\"Поле 'name' категории должно быть 'Театр'\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -198,7 +198,7 @@
       "response": []
     },
     {
-      "name": "Добавление новой категории 2",
+      "name": "Добавление новой категории 120: Активный отдых",
       "event": [
         {
           "listen": "prerequest",
@@ -220,10 +220,10 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' категории должно быть равно 2\", function () {\r",
+              "pm.test(\"Поле 'id' категории должно быть равно 120\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 120').to.eql(120);\r",
               "});\r",
               "pm.test(\"Поле 'name' категории должно быть 'Активный отдых'\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -261,7 +261,7 @@
       "response": []
     },
     {
-      "name": "Добавление нового события 1: Сплав",
+      "name": "Добавление нового события 103: Сплав",
       "event": [
         {
           "listen": "test",
@@ -319,7 +319,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"annotation\": \"Сплав на байдарках похож на полет.\",\r\n  \"category\": 2,\r\n  \"description\": \"Сплав на байдарках похож на полет. На спокойной воде — это парение. На бурной, порожистой — выполнение фигур высшего пилотажа. И то, и другое дарят чувство обновления, феерические эмоции, яркие впечатления.\",\r\n  \"eventDate\": \"2023-08-12 12:12:12\",\r\n  \"location\": {\r\n    \"lat\": 53.235293273455504,\r\n    \"lon\": 50.49523940976306\r\n  },\r\n  \"paid\": false,\r\n  \"participantLimit\": 10,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Сплав на байдарках\"\r\n}",
+          "raw": "{\r\n  \"annotation\": \"Сплав на байдарках похож на полет.\",\r\n  \"category\": 120,\r\n  \"description\": \"Сплав на байдарках похож на полет. На спокойной воде — это парение. На бурной, порожистой — выполнение фигур высшего пилотажа. И то, и другое дарят чувство обновления, феерические эмоции, яркие впечатления.\",\r\n  \"eventDate\": \"2023-08-12 12:12:12\",\r\n  \"location\": {\r\n    \"lat\": 53.235293273455504,\r\n    \"lon\": 50.49523940976306\r\n  },\r\n  \"paid\": false,\r\n  \"participantLimit\": 10,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Сплав на байдарках\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -347,7 +347,7 @@
       "response": []
     },
     {
-      "name": "Добавление нового события 2: Театр",
+      "name": "Добавление нового события 104: Театр",
       "event": [
         {
           "listen": "test",
@@ -408,7 +408,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"annotation\": \"Магия на сцене: незабываемо!\",\r\n  \"category\": 1,\r\n  \"description\": \"Глубокие эмоции и захватывающий сюжет сливаются в удивительном театральном шоу. Актеры с легкостью переносят зрителей в другие миры, раскрывая историю страсти, интриги и любви. Великолепные костюмы и декорации придают жизнь уникальным персонажам, а музыкальное сопровождение подчеркивает каждую ноту драмы. Это увлекательное представление оставит незабываемое впечатление и окунет вас в мир искусства.\",\r\n  \"eventDate\": \"2023-08-13 13:13:13\",\r\n  \"location\": {\r\n    \"lat\": 53.19751366595025, \r\n    \"lon\": 50.09732604244339\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 50,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Ромео и Джульетта\"\r\n}",
+          "raw": "{\r\n  \"annotation\": \"Магия на сцене: незабываемо!\",\r\n  \"category\": 119,\r\n  \"description\": \"Глубокие эмоции и захватывающий сюжет сливаются в удивительном театральном шоу. Актеры с легкостью переносят зрителей в другие миры, раскрывая историю страсти, интриги и любви. Великолепные костюмы и декорации придают жизнь уникальным персонажам, а музыкальное сопровождение подчеркивает каждую ноту драмы. Это увлекательное представление оставит незабываемое впечатление и окунет вас в мир искусства.\",\r\n  \"eventDate\": \"2023-08-13 13:13:13\",\r\n  \"location\": {\r\n    \"lat\": 53.19751366595025, \r\n    \"lon\": 50.09732604244339\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 50,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Ромео и Джульетта\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -501,7 +501,7 @@
           "variable": [
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -574,7 +574,7 @@
           "variable": [
             {
               "key": "eventId",
-              "value": "2"
+              "value": "104"
             }
           ]
         }
@@ -582,7 +582,7 @@
       "response": []
     },
     {
-      "name": "Запрос опубликованных событий",
+      "name": "Запрос опубликованных событий по категории 119",
       "event": [
         {
           "listen": "test",
@@ -595,31 +595,21 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Ответ должен содержать список из 2-х событий\", function () {\r",
+              "pm.test(\"Ответ должен содержать список из 1 события\", function () {\r",
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData.length, 'Дляна списка должна быть 2').to.eql(2);\r",
+              "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содержать поле 'id' со значением 1\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 104\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 1').to.eql(1);\r",
-              "});\r",
-              "pm.test(\"Событие должно содержать поле 'confirmedRequests' со значением 0\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData[0]).to.have.property('confirmedRequests');\r",
-              "    pm.expect(jsonData[0].confirmedRequests, '\"confirmedRequests\" must be 0').to.eql(0);\r",
-              "});\r",
-              "pm.test(\"Событие должно содержать поле 'id' со значением 2\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData[1]).to.have.property('id');\r",
-              "    pm.expect(jsonData[1].id, '\"id\" must be 2').to.eql(2);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 104').to.eql(104);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 0\", function () {\r",
               "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData[1]).to.have.property('confirmedRequests');\r",
-              "    pm.expect(jsonData[1].confirmedRequests, '\"confirmedRequests\" must be 0').to.eql(0);\r",
+              "    pm.expect(jsonData[0]).to.have.property('confirmedRequests');\r",
+              "    pm.expect(jsonData[0].confirmedRequests, '\"confirmedRequests\" must be 0').to.eql(0);\r",
               "});"
             ],
             "type": "text/javascript"
@@ -630,69 +620,17 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events",
+          "raw": "{{baseUrl}}/events?categories=119",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "events"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Запрос участия пользователем 2 в событии 1",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Ответ должен содержать код статуса 201\", function () {\r",
-              "    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
-              "});\r",
-              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
-              "    pm.response.to.be.withBody;\r",
-              "    pm.response.to.be.json;\r",
-              "});\r",
-              "pm.test(\"Ответ должен  содержать поле 'id' со значением 1\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 1').to.eql(1);\r",
-              "});\r",
-              "pm.test(\"Ответ должен  содержать поле 'status' со значением 'CONFIRMED'\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData).to.have.property('status');\r",
-              "    pm.expect(jsonData.status, '\"status\" must be CONFIRMED').to.eql('CONFIRMED');\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "url": {
-          "raw": "{{baseUrl}}/users/:userId/requests?eventId=1",
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "path": [
-            "users",
-            ":userId",
-            "requests"
           ],
           "query": [
             {
-              "key": "eventId",
-              "value": "1"
-            }
-          ],
-          "variable": [
-            {
-              "key": "userId",
-              "value": "2"
+              "key": "categories",
+              "value": "119"
             }
           ]
         }
@@ -700,65 +638,7 @@
       "response": []
     },
     {
-      "name": "Запрос участия пользователем 1 в событии 2",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "pm.test(\"Ответ должен содержать код статуса 201\", function () {\r",
-              "    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
-              "});\r",
-              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
-              "    pm.response.to.be.withBody;\r",
-              "    pm.response.to.be.json;\r",
-              "});\r",
-              "pm.test(\"Ответ должен  содержать поле 'id' со значением 2\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 2').to.eql(2);\r",
-              "});\r",
-              "pm.test(\"Ответ должен  содержать поле 'status' со значением 'CONFIRMED'\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData).to.have.property('status');\r",
-              "    pm.expect(jsonData.status, '\"status\" must be CONFIRMED').to.eql('CONFIRMED');\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [],
-        "url": {
-          "raw": "{{baseUrl}}/users/:userId/requests?eventId=2",
-          "host": [
-            "{{baseUrl}}"
-          ],
-          "path": [
-            "users",
-            ":userId",
-            "requests"
-          ],
-          "query": [
-            {
-              "key": "eventId",
-              "value": "2"
-            }
-          ],
-          "variable": [
-            {
-              "key": "userId",
-              "value": "1"
-            }
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Запрос опубликованных событий",
+      "name": "Запрос опубликованных событий по категории 120",
       "event": [
         {
           "listen": "test",
@@ -771,32 +651,195 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Ответ должен содержать список из 2-х событий\", function () {\r",
+              "pm.test(\"Ответ должен содержать список из 1 события\", function () {\r",
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData.length, 'Длина списка должна быть 2').to.eql(2);\r",
+              "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 1\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 103\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 1').to.eql(1);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 103').to.eql(103);\r",
+              "});\r",
+              "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 0\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0]).to.have.property('confirmedRequests');\r",
+              "    pm.expect(jsonData[0].confirmedRequests, '\"confirmedRequests\" must be 0').to.eql(0);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/events?categories=120",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "events"
+          ],
+          "query": [
+            {
+              "key": "categories",
+              "value": "120"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Запрос участия пользователем 135 в событии 103",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "});\r",
+              "pm.test(\"Ответ должен  содержать поле 'id' со значением 15\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.have.property('id');\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 15').to.eql(15);\r",
+              "});\r",
+              "pm.test(\"Ответ должен  содержать поле 'status' со значением 'CONFIRMED'\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.have.property('status');\r",
+              "    pm.expect(jsonData.status, '\"status\" must be CONFIRMED').to.eql('CONFIRMED');\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId",
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "eventId",
+              "value": "103"
+            }
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "135"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Запрос участия пользователем 134 в событии 104",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([201]);\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "});\r",
+              "pm.test(\"Ответ должен  содержать поле 'id' со значением 16\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.have.property('id');\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 16').to.eql(16);\r",
+              "});\r",
+              "pm.test(\"Ответ должен  содержать поле 'status' со значением 'CONFIRMED'\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.have.property('status');\r",
+              "    pm.expect(jsonData.status, '\"status\" must be CONFIRMED').to.eql('CONFIRMED');\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId",
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "eventId",
+              "value": "104"
+            }
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "134"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Запрос опубликованных событий 119 категория",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать список из 1 события\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
+              "});\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 104\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0]).to.have.property('id');\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 104').to.eql(104);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 1\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('confirmedRequests');\r",
               "    pm.expect(jsonData[0].confirmedRequests, '\"confirmedRequests\" must be 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 2\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData[1]).to.have.property('id');\r",
-              "    pm.expect(jsonData[1].id, '\"id\" must be 2').to.eql(2);\r",
-              "});\r",
-              "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 1\", function () {\r",
-              "    var jsonData = pm.response.json();\r",
-              "    pm.expect(jsonData[1]).to.have.property('confirmedRequests');\r",
-              "    pm.expect(jsonData[1].confirmedRequests, '\"confirmedRequests\" must be 1').to.eql(1);\r",
-              "});"
+              ""
             ],
             "type": "text/javascript"
           }
@@ -806,12 +849,75 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events",
+          "raw": "{{baseUrl}}/events?categories=119",
           "host": [
             "{{baseUrl}}"
           ],
           "path": [
             "events"
+          ],
+          "query": [
+            {
+              "key": "categories",
+              "value": "119"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Запрос опубликованных событий 120 категория",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Ответ должен содержать код статуса 200\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать данные в формате json\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "});\r",
+              "pm.test(\"Ответ должен содержать список из 1 события\", function () {\r",
+              "    pm.response.to.be.withBody;\r",
+              "    pm.response.to.be.json;\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
+              "});\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 103\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0]).to.have.property('id');\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 103').to.eql(103);\r",
+              "});\r",
+              "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 1\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData[0]).to.have.property('confirmedRequests');\r",
+              "    pm.expect(jsonData[0].confirmedRequests, '\"confirmedRequests\" must be 1').to.eql(1);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/events?categories=120",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "events"
+          ],
+          "query": [
+            {
+              "key": "categories",
+              "value": "120"
+            }
           ]
         }
       },
@@ -858,11 +964,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -910,11 +1016,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -962,11 +1068,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -1014,11 +1120,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -1066,11 +1172,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "35"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -1118,11 +1224,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -1130,7 +1236,7 @@
       "response": []
     },
     {
-      "name": "Создание комментария пользователем 2 к событию 1",
+      "name": "Создание комментария пользователем 135 к событию 103",
       "event": [
         {
           "listen": "test",
@@ -1184,11 +1290,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "135"
             },
             {
               "key": "eventId",
-              "value": "1"
+              "value": "103"
             }
           ]
         }
@@ -1196,7 +1302,7 @@
       "response": []
     },
     {
-      "name": "Создание комментария пользователем 1 к событию 2",
+      "name": "Создание комментария пользователем 134 к событию 104",
       "event": [
         {
           "listen": "test",
@@ -1250,11 +1356,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             },
             {
               "key": "eventId",
-              "value": "2"
+              "value": "104"
             }
           ]
         }
@@ -1489,7 +1595,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             }
           ]
         }
@@ -1497,7 +1603,7 @@
       "response": []
     },
     {
-      "name": "Редактирование пользователем 1 комментария 2",
+      "name": "Редактирование пользователем 134 комментария 2",
       "event": [
         {
           "listen": "test",
@@ -1530,7 +1636,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"header\": \"что еще за правила!?\",\r\n    \"description\": \"Админ. засунь эти правила себе в ж...!!!111 \"\r\n}",
+          "raw": "{\r\n    \"header\": \"что еще за правила!?\",\r\n    \"description\": \"Админ. сам читай свои правила\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -1551,7 +1657,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             },
             {
               "key": "comId",
@@ -1676,7 +1782,7 @@
       "response": []
     },
     {
-      "name": "Редактирование пользователем 1 комментария 2, после отклонения",
+      "name": "Редактирование пользователем 134 комментария 2, после отклонения",
       "event": [
         {
           "listen": "test",
@@ -1716,7 +1822,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             },
             {
               "key": "comId",
@@ -1728,7 +1834,7 @@
       "response": []
     },
     {
-      "name": "Удаление проблемного комментария проблемным пользователем",
+      "name": "Удаление проблемного комментария проблемным пользователем 134",
       "event": [
         {
           "listen": "test",
@@ -1759,7 +1865,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             },
             {
               "key": "comId",
@@ -1771,7 +1877,7 @@
       "response": []
     },
     {
-      "name": "Поиск всех комментариев пользователя 1",
+      "name": "Поиск всех комментариев пользователя 134",
       "event": [
         {
           "listen": "test",
@@ -1811,7 +1917,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "134"
             }
           ]
         }
