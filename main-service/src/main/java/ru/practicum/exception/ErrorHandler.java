@@ -57,6 +57,26 @@ public class ErrorHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiError handleCommentNotFoundException(final CommentNotFoundException e) {
+        log.info("404 {}", e.getMessage(), e);
+        return new ApiError("NOT_FOUND",
+                "The required object was not found.",
+                e.getMessage(),
+                LocalDateTime.now());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiError handleUserParticipationNotFoundException(final UserParticipationNotFoundException e) {
+        log.info("404 {}", e.getMessage(), e);
+        return new ApiError("NOT_FOUND",
+                "The required object was not found.",
+                e.getMessage(),
+                LocalDateTime.now());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public ApiError handleCompilationNotFoundException(final CompilationNotFoundException e) {
         log.info("404 {}", e.getMessage(), e);
         return new ApiError("NOT_FOUND",
@@ -91,6 +111,26 @@ public class ErrorHandler {
         log.info("404 {}", e.getMessage(), e);
         return new ApiError("NOT_FOUND",
                 "The required object was not found.",
+                e.getMessage(),
+                LocalDateTime.now());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ApiError handleChangeableStatusConflictException(final CommentStatusConflictException e) {
+        log.info("409 {}", e.getMessage(), e);
+        return new ApiError("CONFLICT",
+                "For the requested operation the conditions are not met.",
+                e.getMessage(),
+                LocalDateTime.now());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ApiError handleCommentTimeConflictException(final CommentTimeConflictException e) {
+        log.info("409 {}", e.getMessage(), e);
+        return new ApiError("FORBIDDEN",
+                "For the requested operation the conditions are not met.",
                 e.getMessage(),
                 LocalDateTime.now());
     }
