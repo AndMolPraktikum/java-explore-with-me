@@ -8,7 +8,7 @@
   },
   "item": [
     {
-      "name": "Добавление нового пользователя 134",
+      "name": "Добавление нового пользователя 136",
       "event": [
         {
           "listen": "prerequest",
@@ -30,20 +30,20 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' пользователя должно быть равно 134\", function () {\r",
+              "pm.test(\"Поле 'id' пользователя должно быть равно 136\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 134').to.eql(134);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 136').to.eql(136);\r",
               "});\r",
               "pm.test(\"Поле 'email' пользователя должно быть равно user1@yandex.ru\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('email');\r",
-              "    pm.expect(jsonData.email, '\"email\" must be \"user134@yandex.ru\"').to.eql('user134@yandex.ru');\r",
+              "    pm.expect(jsonData.email, '\"email\" must be \"user136@yandex.ru\"').to.eql('user136@yandex.ru');\r",
               "});\r",
-              "pm.test(\"Поле 'name' пользователя должно быть user134\", function () {\r",
+              "pm.test(\"Поле 'name' пользователя должно быть user136\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('name');\r",
-              "    pm.expect(jsonData.name, '\"name\" must be \"user134\"').to.eql('user134');\r",
+              "    pm.expect(jsonData.name, '\"name\" must be \"user136\"').to.eql('user136');\r",
               "});"
             ],
             "type": "text/javascript"
@@ -55,7 +55,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"user134\",\r\n    \"email\": \"user134@yandex.ru\"\r\n}",
+          "raw": "{\r\n    \"name\": \"user136\",\r\n    \"email\": \"user136@yandex.ru\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -76,7 +76,7 @@
       "response": []
     },
     {
-      "name": "Добавление еще одного пользователя 135",
+      "name": "Добавление еще одного пользователя 137",
       "event": [
         {
           "listen": "prerequest",
@@ -98,20 +98,20 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' пользователя должно быть равно 135\", function () {\r",
+              "pm.test(\"Поле 'id' пользователя должно быть равно 137\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 135').to.eql(135);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 137').to.eql(137);\r",
               "});\r",
-              "pm.test(\"Поле 'email' пользователя должно быть равно user135@yandex.ru\", function () {\r",
+              "pm.test(\"Поле 'email' пользователя должно быть равно user137@yandex.ru\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('email');\r",
-              "    pm.expect(jsonData.email, '\"email\" must be \"user135@yandex.ru\"').to.eql('user135@yandex.ru');\r",
+              "    pm.expect(jsonData.email, '\"email\" must be \"user137@yandex.ru\"').to.eql('user137@yandex.ru');\r",
               "});\r",
-              "pm.test(\"Поле 'name' пользователя должно быть user135\", function () {\r",
+              "pm.test(\"Поле 'name' пользователя должно быть user137\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('name');\r",
-              "    pm.expect(jsonData.name, '\"name\" must be \"user135\"').to.eql('user135');\r",
+              "    pm.expect(jsonData.name, '\"name\" must be \"user137\"').to.eql('user137');\r",
               "});"
             ],
             "type": "text/javascript"
@@ -123,7 +123,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"name\": \"user135\",\r\n    \"email\": \"user135@yandex.ru\"\r\n}",
+          "raw": "{\r\n    \"name\": \"user137\",\r\n    \"email\": \"user137@yandex.ru\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -144,7 +144,7 @@
       "response": []
     },
     {
-      "name": "Добавление новой категории 119: Театр",
+      "name": "Добавление новой категории 121: Театр",
       "event": [
         {
           "listen": "test",
@@ -157,10 +157,10 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' категории должно быть равно 119\", function () {\r",
+              "pm.test(\"Поле 'id' категории должно быть равно 121\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 119').to.eql(119);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 121').to.eql(121);\r",
               "});\r",
               "pm.test(\"Поле 'name' категории должно быть 'Театр'\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -198,7 +198,7 @@
       "response": []
     },
     {
-      "name": "Добавление новой категории 120: Активный отдых",
+      "name": "Добавление новой категории 122: Активный отдых",
       "event": [
         {
           "listen": "prerequest",
@@ -220,10 +220,10 @@
               "    pm.response.to.be.withBody;\r",
               "    pm.response.to.be.json;\r",
               "});\r",
-              "pm.test(\"Поле 'id' категории должно быть равно 120\", function () {\r",
+              "pm.test(\"Поле 'id' категории должно быть равно 122\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData).to.have.property('id');\r",
-              "    pm.expect(jsonData.id, '\"id\" must be 120').to.eql(120);\r",
+              "    pm.expect(jsonData.id, '\"id\" must be 122').to.eql(122);\r",
               "});\r",
               "pm.test(\"Поле 'name' категории должно быть 'Активный отдых'\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -261,7 +261,7 @@
       "response": []
     },
     {
-      "name": "Добавление нового события 103: Сплав",
+      "name": "Добавление нового события 106: Сплав",
       "event": [
         {
           "listen": "test",
@@ -319,7 +319,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"annotation\": \"Сплав на байдарках похож на полет.\",\r\n  \"category\": 120,\r\n  \"description\": \"Сплав на байдарках похож на полет. На спокойной воде — это парение. На бурной, порожистой — выполнение фигур высшего пилотажа. И то, и другое дарят чувство обновления, феерические эмоции, яркие впечатления.\",\r\n  \"eventDate\": \"2023-08-12 12:12:12\",\r\n  \"location\": {\r\n    \"lat\": 53.235293273455504,\r\n    \"lon\": 50.49523940976306\r\n  },\r\n  \"paid\": false,\r\n  \"participantLimit\": 10,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Сплав на байдарках\"\r\n}",
+          "raw": "{\r\n  \"annotation\": \"Сплав на байдарках похож на полет.\",\r\n  \"category\": 122,\r\n  \"description\": \"Сплав на байдарках похож на полет. На спокойной воде — это парение. На бурной, порожистой — выполнение фигур высшего пилотажа. И то, и другое дарят чувство обновления, феерические эмоции, яркие впечатления.\",\r\n  \"eventDate\": \"2023-08-12 12:12:12\",\r\n  \"location\": {\r\n    \"lat\": 53.235293273455504,\r\n    \"lon\": 50.49523940976306\r\n  },\r\n  \"paid\": false,\r\n  \"participantLimit\": 10,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Сплав на байдарках\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -339,7 +339,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "1"
+              "value": "136"
             }
           ]
         }
@@ -347,7 +347,7 @@
       "response": []
     },
     {
-      "name": "Добавление нового события 104: Театр",
+      "name": "Добавление нового события 107: Театр",
       "event": [
         {
           "listen": "test",
@@ -408,7 +408,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"annotation\": \"Магия на сцене: незабываемо!\",\r\n  \"category\": 119,\r\n  \"description\": \"Глубокие эмоции и захватывающий сюжет сливаются в удивительном театральном шоу. Актеры с легкостью переносят зрителей в другие миры, раскрывая историю страсти, интриги и любви. Великолепные костюмы и декорации придают жизнь уникальным персонажам, а музыкальное сопровождение подчеркивает каждую ноту драмы. Это увлекательное представление оставит незабываемое впечатление и окунет вас в мир искусства.\",\r\n  \"eventDate\": \"2023-08-13 13:13:13\",\r\n  \"location\": {\r\n    \"lat\": 53.19751366595025, \r\n    \"lon\": 50.09732604244339\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 50,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Ромео и Джульетта\"\r\n}",
+          "raw": "{\r\n  \"annotation\": \"Магия на сцене: незабываемо!\",\r\n  \"category\": 121,\r\n  \"description\": \"Глубокие эмоции и захватывающий сюжет сливаются в удивительном театральном шоу. Актеры с легкостью переносят зрителей в другие миры, раскрывая историю страсти, интриги и любви. Великолепные костюмы и декорации придают жизнь уникальным персонажам, а музыкальное сопровождение подчеркивает каждую ноту драмы. Это увлекательное представление оставит незабываемое впечатление и окунет вас в мир искусства.\",\r\n  \"eventDate\": \"2023-08-13 13:13:13\",\r\n  \"location\": {\r\n    \"lat\": 53.19751366595025, \r\n    \"lon\": 50.09732604244339\r\n  },\r\n  \"paid\": true,\r\n  \"participantLimit\": 50,\r\n  \"requestModeration\": false,\r\n  \"title\": \"Ромео и Джульетта\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -428,7 +428,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "2"
+              "value": "137"
             }
           ]
         }
@@ -436,7 +436,7 @@
       "response": []
     },
     {
-      "name": "Редактирование данных события 1 и его статуса (публикация).",
+      "name": "Редактирование данных события 106 и его статуса (публикация).",
       "event": [
         {
           "listen": "test",
@@ -501,7 +501,7 @@
           "variable": [
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -509,7 +509,7 @@
       "response": []
     },
     {
-      "name": "Редактирование данных события 2 и его статуса (публикация).",
+      "name": "Редактирование данных события 107 и его статуса (публикация).",
       "event": [
         {
           "listen": "test",
@@ -574,7 +574,7 @@
           "variable": [
             {
               "key": "eventId",
-              "value": "104"
+              "value": "107"
             }
           ]
         }
@@ -582,7 +582,7 @@
       "response": []
     },
     {
-      "name": "Запрос опубликованных событий по категории 119",
+      "name": "Запрос опубликованных событий по категории 121",
       "event": [
         {
           "listen": "test",
@@ -601,10 +601,10 @@
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 104\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 107\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 104').to.eql(104);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 107').to.eql(107);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 0\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -620,7 +620,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events?categories=119",
+          "raw": "{{baseUrl}}/events?categories=121",
           "host": [
             "{{baseUrl}}"
           ],
@@ -630,7 +630,7 @@
           "query": [
             {
               "key": "categories",
-              "value": "119"
+              "value": "121"
             }
           ]
         }
@@ -657,10 +657,10 @@
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 103\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 106\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 103').to.eql(103);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 106').to.eql(106);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 0\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -676,7 +676,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events?categories=120",
+          "raw": "{{baseUrl}}/events?categories=122",
           "host": [
             "{{baseUrl}}"
           ],
@@ -686,7 +686,7 @@
           "query": [
             {
               "key": "categories",
-              "value": "120"
+              "value": "122"
             }
           ]
         }
@@ -694,7 +694,7 @@
       "response": []
     },
     {
-      "name": "Запрос участия пользователем 135 в событии 103",
+      "name": "Запрос участия пользователем 137 в событии 106",
       "event": [
         {
           "listen": "test",
@@ -726,7 +726,7 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/users/:userId/requests?eventId=103",
+          "raw": "{{baseUrl}}/users/:userId/requests?eventId=106",
           "host": [
             "{{baseUrl}}"
           ],
@@ -738,13 +738,13 @@
           "query": [
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ],
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             }
           ]
         }
@@ -752,7 +752,7 @@
       "response": []
     },
     {
-      "name": "Запрос участия пользователем 134 в событии 104",
+      "name": "Запрос участия пользователем 136 в событии 107",
       "event": [
         {
           "listen": "test",
@@ -784,7 +784,7 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/users/:userId/requests?eventId=104",
+          "raw": "{{baseUrl}}/users/:userId/requests?eventId=107",
           "host": [
             "{{baseUrl}}"
           ],
@@ -796,13 +796,13 @@
           "query": [
             {
               "key": "eventId",
-              "value": "104"
+              "value": "107"
             }
           ],
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             }
           ]
         }
@@ -810,7 +810,7 @@
       "response": []
     },
     {
-      "name": "Запрос опубликованных событий 119 категория",
+      "name": "Запрос опубликованных событий 121 категория",
       "event": [
         {
           "listen": "test",
@@ -829,10 +829,10 @@
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 104\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 107\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 104').to.eql(104);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 107').to.eql(107);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 1\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -849,7 +849,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events?categories=119",
+          "raw": "{{baseUrl}}/events?categories=121",
           "host": [
             "{{baseUrl}}"
           ],
@@ -859,7 +859,7 @@
           "query": [
             {
               "key": "categories",
-              "value": "119"
+              "value": "121"
             }
           ]
         }
@@ -867,7 +867,7 @@
       "response": []
     },
     {
-      "name": "Запрос опубликованных событий 120 категория",
+      "name": "Запрос опубликованных событий 122 категория",
       "event": [
         {
           "listen": "test",
@@ -886,10 +886,10 @@
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData.length, 'Длина списка должна быть 1').to.eql(1);\r",
               "});\r",
-              "pm.test(\"Событие должно содердать поле 'id' со значением 103\", function () {\r",
+              "pm.test(\"Событие должно содердать поле 'id' со значением 106\", function () {\r",
               "    var jsonData = pm.response.json();\r",
               "    pm.expect(jsonData[0]).to.have.property('id');\r",
-              "    pm.expect(jsonData[0].id, '\"id\" must be 103').to.eql(103);\r",
+              "    pm.expect(jsonData[0].id, '\"id\" must be 106').to.eql(106);\r",
               "});\r",
               "pm.test(\"Событие должно содердать поле 'confirmedRequests' со значением 1\", function () {\r",
               "    var jsonData = pm.response.json();\r",
@@ -906,7 +906,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{baseUrl}}/events?categories=120",
+          "raw": "{{baseUrl}}/events?categories=122",
           "host": [
             "{{baseUrl}}"
           ],
@@ -916,7 +916,7 @@
           "query": [
             {
               "key": "categories",
-              "value": "120"
+              "value": "122"
             }
           ]
         }
@@ -964,11 +964,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1016,11 +1016,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1068,11 +1068,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1120,11 +1120,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1172,11 +1172,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "35"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1224,11 +1224,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1236,7 +1236,7 @@
       "response": []
     },
     {
-      "name": "Создание комментария пользователем 135 к событию 103",
+      "name": "Создание комментария пользователем 137 к событию 106",
       "event": [
         {
           "listen": "test",
@@ -1290,11 +1290,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "135"
+              "value": "137"
             },
             {
               "key": "eventId",
-              "value": "103"
+              "value": "106"
             }
           ]
         }
@@ -1302,7 +1302,7 @@
       "response": []
     },
     {
-      "name": "Создание комментария пользователем 134 к событию 104",
+      "name": "Создание комментария пользователем 136 к событию 107",
       "event": [
         {
           "listen": "test",
@@ -1356,11 +1356,11 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             },
             {
               "key": "eventId",
-              "value": "104"
+              "value": "107"
             }
           ]
         }
@@ -1544,7 +1544,7 @@
       "response": []
     },
     {
-      "name": "Поиск возвращенных комментариев",
+      "name": "Поиск возвращенных комментариев для пользователя 136",
       "event": [
         {
           "listen": "test",
@@ -1595,7 +1595,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             }
           ]
         }
@@ -1603,7 +1603,7 @@
       "response": []
     },
     {
-      "name": "Редактирование пользователем 134 комментария 2",
+      "name": "Редактирование пользователем 136 комментария 2",
       "event": [
         {
           "listen": "test",
@@ -1657,7 +1657,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             },
             {
               "key": "comId",
@@ -1782,7 +1782,7 @@
       "response": []
     },
     {
-      "name": "Редактирование пользователем 134 комментария 2, после отклонения",
+      "name": "Редактирование пользователем 136 комментария 2, после отклонения",
       "event": [
         {
           "listen": "test",
@@ -1822,7 +1822,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             },
             {
               "key": "comId",
@@ -1834,7 +1834,7 @@
       "response": []
     },
     {
-      "name": "Удаление проблемного комментария проблемным пользователем 134",
+      "name": "Удаление проблемного комментария проблемным пользователем 136",
       "event": [
         {
           "listen": "test",
@@ -1865,7 +1865,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             },
             {
               "key": "comId",
@@ -1877,7 +1877,7 @@
       "response": []
     },
     {
-      "name": "Поиск всех комментариев пользователя 134",
+      "name": "Поиск всех комментариев пользователя 136",
       "event": [
         {
           "listen": "test",
@@ -1917,7 +1917,7 @@
           "variable": [
             {
               "key": "userId",
-              "value": "134"
+              "value": "136"
             }
           ]
         }
