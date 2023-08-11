@@ -9,7 +9,6 @@ import ru.practicum.event.dto.*;
 import ru.practicum.event.service.EventService;
 import ru.practicum.request.dto.ParticipationRequestDto;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -26,8 +25,7 @@ public class PrivateEventController {
     @ResponseStatus(HttpStatus.OK)
     private List<EventShortDto> getAllUserEvents(@PathVariable Long userId,
                                                  @RequestParam(defaultValue = "0") int from,
-                                                 @RequestParam(defaultValue = "10") int size,
-                                                 HttpServletRequest request) {
+                                                 @RequestParam(defaultValue = "10") int size) {
         log.info("Входящий запрос GET /users/{}/events?from={}&size={}", userId, from, size);
         List<EventShortDto> eventShortDtoList = eventService.getPrivateUserEvents(userId, from, size);
         log.info("Исходящий ответ: {}", eventShortDtoList);

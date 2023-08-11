@@ -132,6 +132,8 @@ public class EventServiceImpl implements EventService {
         List<EventShortDto> eventShortDtoList = EventMapper.toEventShortDtoList(eventList);
 
         eventShortDtoList = client.getStatisticShort(eventShortDtoList);
+        eventShortDtoList.forEach(event -> event.setConfirmedRequests(eventRepository
+                .getCountByEventIdWhereStatusConfirmed(event.getId())));
 
         if (sortVariant == SortVariant.EVENT_DATE) {
             eventShortDtoList = eventShortDtoList.stream().sorted(Comparator.comparing(EventShortDto::getEventDate))
